@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Рассадников Дмитрий Сергеевич</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gradient: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            --gradient-accent: linear-gradient(135deg, #e74c3c 0%, #3498db 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(120deg, #f6f9fc 0%, #eef2f7 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            background: white;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            transform: rotate(30deg);
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .position {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        .content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            text-align: center;
+            flex-direction: column;
+        }
+        
+        /* Кружки для иконок разделов */
+        .section-icon {
+            color: white;
+            background: var(--gradient);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover .section-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--gradient-accent);
+        }
+        
+        .experience-item, .education-item, .course-item {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 3px solid #e8e8e8;
+            padding-left: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover, .education-item:hover, .course-item:hover {
+            border-left-color: var(--primary);
+        }
+        
+        .company, .institution {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: block;
+            font-weight: 500;
+        }
+        
+        .job-title {
+            color: #000000 !important;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        li:hover {
+            transform: translateX(5px);
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        li:hover:before {
+            color: var(--accent);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--light);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .skill-category:hover {
+            background: #e4e9ec;
+            transform: translateY(-3px);
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        /* Стили для центрированных иконок */
+        .icon-wrapper {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+        
+        .icon-wrapper i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .personal-qualities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        
+        .quality {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .quality:hover {
+            background: var(--gradient-accent);
+            transform: scale(1.05);
+        }
+        
+        .about {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 12px;
+            line-height: 1.8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--gradient);
+            border-radius: 0 0 0 100px;
+            opacity: 0.1;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        
+        .progress {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .position {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+        
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 100;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .print-btn:hover {
+            background: var(--gradient-accent);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            background: var(--primary);
+            animation: float 15s infinite linear;
+        }
+        
+        .shape:nth-child(1) {
+            width: 40px;
+            height: 40px;
+            top: 20%;
+            left: 10%;
+            border-radius: 50%;
+            animation-delay: 0s;
+            animation-duration: 15s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            left: 5%;
+            border-radius: 10px;
+            animation-delay: 2s;
+            animation-duration: 20s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            top: 30%;
+            right: 5%;
+            border-radius: 50%;
+            animation-delay: 4s;
+            animation-duration: 25s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            color: var(--secondary);
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        
+        <header class="header">
+            <h1>Рассадников Дмитрий Сергеевич</h1>
+            <div class="position">Веб-разработчик / Начинающий специалист в IT</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Магнитогорск (готов к командировкам)</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+7 (937) 360-27-82</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>rof1234656@gmail.com</span>
+                </div>
+            </div>
+        </header>
+        
+        <h2 class="section-title">Профессиональное портфолио</h2>
+        
+        <div class="content">
+            <div class="left-column">
+                <section class="section">
+                    <h2>
+                        <div class="section-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        Опыт работы
+                    </h2>
+                    <div class="experience-item">
+                        <div class="company">ООО СК "РУПР"</div>
+                        <span class="date">сентябрь 2024 — декабрь 2024 (3 месяца)</span>
+                        <div class="job-title">Инженер ПТО (Производственно-технический отдел)</div>
+                        <ul>
+                            <li>Изучение, проверка и анализ проектной, конструкторской и сметной документации</li>
+                            <li>Составление и оформление исполнительной технической документации</li>
+                            <li>Подготовка технических заданий для субподрядных организаций и смежных отделов</li>
+                            <li>Ведение журналов производства работ, актов КС-2, КС-3</li>
+                            <li>Участие в сдаче готовой документации заказчику и в архив</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2>
+                        <div class="section-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        Образование
+                    </h2>
+                    <div class="education-item">
+                        <div class="institution">Сибайский многопрофильный профессиональный колледж, г. Сибай</div>
+                        <span class="date">Год окончания: 2025</span>
+                        <div>Специальность: «Информационные системы и программирование»</div>
+                        <div>Квалификация: программист</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="institution">Магнитогорский государственный технический университет</div>
+                        <div>В настоящее время продолжаю повышать свой образовательный уровень</div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2>
+                        <div class="section-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        Курсы и тренинги
+                    </h2>
+                    <div class="course-item">
+                        <div class="institution">«Разработчик web-приложений»</div>
+                        <div>Учалинский колледж горной промышленности</div>
+                        <span class="date">2025 год, 256 часов</span>
+                    </div>
+                    
+                    <div class="course-item">
+                        <div class="institution">«Дизайн»</div>
+                        <div>Сибайская детская художественная школа</div>
+                        <span class="date">2020 год, 5 лет</span>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="right-column">
+                <section class="section">
+                    <h2>
+                        <div class="section-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        О себе
+                    </h2>
+                    <div class="about">
+                        <p>В настоящее время нахожусь в активном поиске своей позиции в сфере IT. Имею комплексное образование: техническая база, подкрепленная дипломом программиста колледжа и дипломом о дополнительной профессиональной переподготовке по направлению веб-разработки.</p>
+                        <p>Мое ключевое конкурентное преимущество — это сформированное художественное мышление, полученное за пять лет обучения в художественной школе, которое позволяет подходить к задачам разработки с точки зрения пользовательского опыта и эстетики.</p>
+                        <p>Готов полностью погрузиться в рабочий процесс, перенимать опыт коллег и вносить вклад в развитие проектов компании.</p>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2>
+                        <div class="section-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        Профессиональные навыки
+                    </h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="skill-name">Компьютерные навыки</div>
+                            <div>Уверенный пользователь ПК</div>
+                            <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                            <div class="skill-name">Офисные программы</div>
+                            <div>Microsoft Word, Excel, PowerPoint</div>
+                            <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div class="skill-name">Графические редакторы</div>
+                            <div>Adobe Photoshop, Adobe After Effects</div>
+                            <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="skill-name">Дополнительно</div>
+                            <div>Работа с веб-браузерами, офисным пакетом, файлами и архивацией</div>
+                            <div class="progress-bar"><div class="progress" style="width: 88%"></div></div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="skill-name">Языки</div>
+                            <div>Английский язык</div>
+                            <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2>
+                        <div class="section-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        Личные качества
+                    </h2>
+                    <div class="personal-qualities">
+                        <span class="quality">Отсутствие вредных привычек</span>
+                        <span class="quality">Энергичность</span>
+                        <span class="quality">Инициативность</span>
+                        <span class="quality">Самостоятельность</span>
+                        <span class="quality">Ответственность</span>
+                        <span class="quality">Коммуникабельность</span>
+                        <span class="quality">Быстрая обучаемость</span>
+                        <span class="quality">Работоспособность</span>
+                        <span class="quality">Умение расставлять приоритеты</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i> Печать резюме
+    </button>
+
+    <script>
+        // Анимация прогресс-баров при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.progress');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+            
+            // Анимация появления элементов при скролле
+            const animatedItems = document.querySelectorAll('.section, .experience-item, .education-item, .course-item, .skill-category');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedItems.forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+            
+            // Добавляем текущую дату в футер при печати
+            const beforePrint = () => {
+                const printDate = document.createElement('div');
+                printDate.style.textAlign = 'center';
+                printDate.style.marginTop = '20px';
+                printDate.style.padding = '10px';
+                printDate.style.borderTop = '1px solid #ccc';
+                printDate.textContent = `Дата создания резюме: ${new Date().toLocaleDateString('ru-RU')}`;
+                document.body.appendChild(printDate);
+            };
+            
+            const afterPrint = () => {
+                const printDate = document.querySelector('div:last-child');
+                if (printDate) document.body.removeChild(printDate);
+            };
+            
+            if (window.matchMedia) {
+                const mediaQueryList = window.matchMedia('print');
+                mediaQueryList.addListener(mql => {
+                    if (mql.matches) {
+                        beforePrint();
+                    } else {
+                        afterPrint();
+                    }
+                });
+            }
+            
+            window.onbeforeprint = beforePrint;
+            window.onafterprint = afterPrint;
+        });
+    </script>
+</body>
+</html>
